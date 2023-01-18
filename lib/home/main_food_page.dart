@@ -31,10 +31,15 @@ class _MainFoodPageState extends State<MainFoodPage> {
                         color: AppColors.mainColor,
                         size: 30,
                       ),
-                      SmallText(
-                        text: "Tashkent",
-                        color: Colors.black54,
-                      ),
+                      Row(
+                        children: [
+                          SmallText(
+                            text: "Tashkent",
+                            color: Colors.black54,
+                          ),
+                          Icon(Icons.arrow_drop_down)
+                        ],
+                      )
                     ],
                   ),
                   Center(
