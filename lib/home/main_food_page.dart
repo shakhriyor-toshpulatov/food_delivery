@@ -4,6 +4,7 @@ import 'package:foood_delivery/widgets/big_text.dart';
 import 'package:foood_delivery/widgets/small_text.dart';
 
 import '../utils/colors.dart';
+import '../utils/dimensions.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
@@ -16,12 +17,14 @@ class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
+      body: Column(children: [
+        Container(
+          child: Container(
             child: Container(
-              margin: EdgeInsets.only(top: 45, bottom: 15),
-              padding: EdgeInsets.only(left: 20, right: 20),
+              margin: EdgeInsets.only(
+                  top: Dimensions.height45, bottom: Dimensions.height15),
+              padding: EdgeInsets.only(
+                  left: Dimensions.width20, right: Dimensions.width20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -30,7 +33,6 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       BigText(
                         text: "Uzbekistan",
                         color: AppColors.mainColor,
-                        size: 30,
                       ),
                       Row(
                         children: [
@@ -38,29 +40,39 @@ class _MainFoodPageState extends State<MainFoodPage> {
                             text: "Tashkent",
                             color: Colors.black54,
                           ),
-                          Icon(Icons.arrow_drop_down)
+                          Icon(Icons.arrow_drop_down_rounded),
                         ],
                       )
                     ],
                   ),
                   Center(
                     child: Container(
-                      width: 45,
-                      height: 45,
-                      child: Icon(Icons.search, color: Colors.white),
+                      width: Dimensions.height45,
+                      height: Dimensions.height45,
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                        size: Dimensions.iconSize24,
+                      ),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius:
+                        BorderRadius.circular(Dimensions.radius15),
                         color: AppColors.mainColor,
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
           ),
-          FoodPageBody(),
-        ],
-      ),
+        ),
+        //show the header
+        Expanded(
+          child: SingleChildScrollView(
+            child: FoodPageBody(),
+          ),
+        ),
+      ]),
     );
   }
 }
