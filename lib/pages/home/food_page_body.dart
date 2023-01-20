@@ -5,8 +5,8 @@ import 'package:foood_delivery/widgets/app_column.dart';
 import 'package:foood_delivery/widgets/big_text.dart';
 import 'package:foood_delivery/widgets/icon_and_text_widget.dart';
 
-import '../utils/dimensions.dart';
-import '../widgets/small_text.dart';
+import '../../utils/dimensions.dart';
+import '../../widgets/small_text.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -71,10 +71,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           // color: Colors.black,
           margin: EdgeInsets.only(left: Dimensions.width30),
           child: Row(
-
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BigText(text: "Popular", ),
+              BigText(
+                text: "Popular",
+              ),
               SizedBox(
                 width: Dimensions.width10,
               ),
@@ -111,7 +112,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       height: Dimensions.listViewImgSize,
                       decoration: BoxDecoration(
                         borderRadius:
-                        BorderRadius.circular(Dimensions.radius20),
+                            BorderRadius.circular(Dimensions.radius20),
                         color: Colors.white38,
                         image: const DecorationImage(
                           image: AssetImage("assets/image/food2.png"),
@@ -126,11 +127,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(Dimensions.radius20),
                               bottomRight:
-                              Radius.circular(Dimensions.radius20)),
+                                  Radius.circular(Dimensions.radius20)),
                           color: Colors.white,
                         ),
                         child: Padding(
-                          padding: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +143,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               SmallText(text: "With uzbek characteristics"),
                               SizedBox(height: Dimensions.height10),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: const [
                                   IconAndTextWidget(
                                       icon: Icons.circle_sharp,
@@ -193,7 +197,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       var currScale = 0.8;
       matrix = Matrix4.diagonal3Values(1, currScale, 1)
         ..setTranslationRaw(0, _height * (1 - _scaleFactor), 1);
-    };
+    }
+    ;
 
     return Transform(
       transform: matrix,
@@ -209,35 +214,37 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ? const Color(0xFF69c5df)
                   : const Color(0xFF9294cc),
               image: const DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/image/food2.png")),
+                fit: BoxFit.cover,
+                image: AssetImage("assets/image/food2.png"),
+              ),
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: Dimensions.pageViewTextContainer,
-              margin: EdgeInsets.only(
-                  left: Dimensions.width30,
-                  right: Dimensions.width30,
-                  bottom: Dimensions.height30),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radius20),
-                  color: Colors.white,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0xFFe8e8e8),
-                      blurRadius: 5.0,
-                      offset: Offset(0, 5),
-                    ),
-                    BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: Offset(5, 0),
-                    ),
-                  ]),
-              child: AppColumn(text: "Breakfast",)
-            ),
+                height: Dimensions.pageViewTextContainer,
+                margin: EdgeInsets.only(
+                    left: Dimensions.width30,
+                    right: Dimensions.width30,
+                    bottom: Dimensions.height30),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(Dimensions.radius20),
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0xFFe8e8e8),
+                        blurRadius: 5.0,
+                        offset: Offset(0, 5),
+                      ),
+                      BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
+                      BoxShadow(
+                        color: Colors.white,
+                        offset: Offset(5, 0),
+                      ),
+                    ]),
+                child: AppColumn(
+                  text: "Breakfast",
+                )),
           ),
         ],
       ),
