@@ -2,7 +2,9 @@ class Product {
   int? _totalSize;
   int? _typeId;
   int? _offset;
-  List<ProductModel>? _products;
+  late List<ProductModel> _products;
+
+  List<ProductModel> get products => _products;
 
   Product(
       {required totalSize,
@@ -15,7 +17,7 @@ class Product {
     this._products = _products;
   }
 
-  Product.formJson(Map<String, dynamic> json) {
+  Product.fromJson(Map<String, dynamic> json) {
     _totalSize = json['total_size'];
     _typeId = json['type_id'];
     _offset = json['offset'];
