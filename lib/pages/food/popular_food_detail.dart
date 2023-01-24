@@ -5,6 +5,7 @@ import 'package:foood_delivery/widgets/app_icon.dart';
 import '../../utils/colors.dart';
 import '../../widgets/app_column.dart';
 import '../../widgets/big_text.dart';
+import '../../widgets/exandable_text_widget.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -69,13 +70,13 @@ class PopularFoodDetail extends StatelessWidget {
                   SizedBox(height: Dimensions.height20),
                   BigText(text: "Introduce"),
                   SizedBox(height: Dimensions.height20),
-                  // Expanded(
-                  //   child: SingleChildScrollView(
-                  //     child: ExpandableTextWidget(
-                  //         text:
-                  //         """It is not a secret that our meals influence much on our health and our mood. That's why I consider breakfast to be the most important meal in the day as it is the first our meal and it can put us in good spirits."""),
-                  //   ),
-                  // ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: ExpandableTextWidget(
+                          text:
+                          """It is not a secret that our meals influence much on our health and our mood. That's why I consider breakfast to be the most important meal in the day as it is the first our meal and it can put us in good spirits."""),
+                    ),
+                  ),
                 ],
               ),
             ),
