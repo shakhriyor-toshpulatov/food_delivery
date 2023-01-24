@@ -151,3 +151,4 @@ class RecommendedFoodDetail extends StatelessWidget {
     );
   }
 }
+ 

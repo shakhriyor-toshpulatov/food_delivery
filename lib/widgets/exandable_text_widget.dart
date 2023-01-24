@@ -68,10 +68,10 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
                       ? Icons.arrow_drop_down
                       : Icons.arrow_drop_up,
                   color: AppColors.mainColor,
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
